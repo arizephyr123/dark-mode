@@ -2,8 +2,8 @@ import React, { useState } from "react";
 
 const useLocalStorage = (key, initialValue) => {
   const [storedValue, setStoredValue] = useState(() => {
-    window.localStorage.getItem(key)
-      ? JSON.parse(window.localStorage.getItem(key))
+    const item = window.localStorage.getItem(key);
+     return item ? JSON.parse(item)
       : initialValue;
   });
 
